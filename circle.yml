@@ -1,4 +1,9 @@
 machine:
   python:
-    version: 3.4.3
+    version: 2.7.10
 
+dependencies:
+  pre:
+    - apt-get purge python-pip
+    - wget https://bootstrap.pypa.io/get-pip.py
+    - python get-pip.py
