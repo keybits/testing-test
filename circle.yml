@@ -4,6 +4,6 @@ machine:
 
 dependencies:
   pre:
-    - apt-get purge python-pip
+    - sudo apt-get purge python-pip
     - wget https://bootstrap.pypa.io/get-pip.py
     - python get-pip.py
