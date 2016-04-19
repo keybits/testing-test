@@ -4,5 +4,8 @@ machine:
 
 
 test:
+  override:
+    - "false"
   post:
     - touch $CIRCLE_ARTIFACTS/file.txt
+
