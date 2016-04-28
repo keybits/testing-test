@@ -10,6 +10,6 @@ test:
 deployment:
   release:
     tag: /v[0-9]+/
-    owner: keybits
+    owner: circleci
     commands:
       - "true"
