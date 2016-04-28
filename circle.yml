@@ -4,8 +4,12 @@ machine:
 
 
 test:
-  override:
-    - "false"
   post:
     - touch $CIRCLE_ARTIFACTS/file.txt
 
+deployment:
+  release:
+    tag: /v[0-9]+/
+    owner: circleci
+    commands:
+      - "true"
