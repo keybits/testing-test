@@ -4,6 +4,11 @@ machine:
   services:
     - redis
 
+general:
+  branches:
+    only:
+      - master
+      - /v[0-9]+/
 
 test:
   post:
