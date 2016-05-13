@@ -3,9 +3,6 @@ machine:
     version: 2.7.10
 
 test:
-  override:
-    - nosetests:
-        parallel: true 
   post:
     - touch $CIRCLE_ARTIFACTS/file.txt
 
