@@ -2,6 +2,11 @@ machine:
   python:
     version: 2.7.10
 
+general:
+  branches:
+    ignore:
+      - master
+
 test:
   post:
     - touch $CIRCLE_ARTIFACTS/file.txt
