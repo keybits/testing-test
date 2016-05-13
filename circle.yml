@@ -1,16 +1,11 @@
 machine:
   python:
     version: 2.7.10
-  services:
-    - redis
-
-general:
-  branches:
-    only:
-      - master
-      - /v[0-9]+/
 
 test:
+  ovverride:
+    - python flaskr_test.py:
+      parallel: true 
   post:
     - touch $CIRCLE_ARTIFACTS/file.txt
 
