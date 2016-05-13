@@ -3,7 +3,7 @@ machine:
     version: 2.7.10
 
 test:
-  ovverride:
+  override:
     - python flaskr_test.py:
       parallel: true 
   post:
