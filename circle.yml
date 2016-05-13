@@ -4,8 +4,8 @@ machine:
 
 test:
   override:
-    - python flaskr_test.py:
-      parallel: true 
+    - nosetests:
+        parallel: true 
   post:
     - touch $CIRCLE_ARTIFACTS/file.txt
 
