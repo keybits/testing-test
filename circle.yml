@@ -8,7 +8,7 @@ test:
 
 deployment:
   release:
-    tag: /v[0-9]+/
+    tag: /\d+\.\d+\.\d+/
     owner: keybits
     commands:
       - "true"
