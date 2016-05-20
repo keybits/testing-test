@@ -8,7 +8,7 @@ test:
 
 deployment:
   release:
-    tag: /.*/
+    tag: /release-.*/
     owner: keybits
     commands:
       - "true"
