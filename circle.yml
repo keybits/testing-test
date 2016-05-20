@@ -4,11 +4,11 @@ machine:
 
 test:
   override:
-    - if [ $CIRCLE_BRANCH = testing ] | nosetests; fi:
+    - case $CIRCLE_BRANCH in testing) nosetests;; esac:
         parallel: true
         files:
           - tests/test1.py
-    - if [ $CIRCLE_BRANCH = master ] | nosetests; fi:
+    - case $CIRCLE_BRANCH in master) nosetests;; esac:
         parallel: true
         files:
           - tests/test2.py
