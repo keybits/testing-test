@@ -4,14 +4,10 @@ machine:
 
 test:
   override:
-    - case $CIRCLE_BRANCH in testing) nosetests;; esac:
+    - case $CIRCLE_BRANCH in testing) nosetests tests/test1.py;; esac:
         parallel: true
-        files:
-          - tests/test1.py
-    - case $CIRCLE_BRANCH in master) nosetests;; esac:
+    - case $CIRCLE_BRANCH in master) nosetests tests/test2.py;; esac:
         parallel: true
-        files:
-          - tests/test2.py
   post:
     - touch $CIRCLE_ARTIFACTS/file.txt
 
