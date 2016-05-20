@@ -7,11 +7,11 @@ test:
     - if [ $CIRCLE_BRANCH = testing ] | nosetests; fi:
         parallel: true
         files:
-          - thetests/test1.py
+          - tests/test1.py
     - if [ $CIRCLE_BRANCH = master ] | nosetests; fi:
         parallel: true
         files:
-          - thetests/test2.py
+          - tests/test2.py
   post:
     - touch $CIRCLE_ARTIFACTS/file.txt
 
