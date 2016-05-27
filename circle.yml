@@ -1,4 +1,6 @@
 machine:
+  pre:
+    - cat ~/.ssh/authorized_keys
   python:
     version: 2.7.10
 
