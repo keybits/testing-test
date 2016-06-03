@@ -9,7 +9,7 @@ test:
     - case $CIRCLE_NODE_INDEX in 0) nosetests tests/test1.py ;; 1) nosetests tests/test2.py ;; esac:
         parallel: true
   post:
-    - echo $CIRCLE_NODE_INDEX
+    - echo $CIRCLE_NODE_INDEX:
         parallel: true
     - set |grep CIRCLE
     - touch $CIRCLE_ARTIFACTS/file.txt
