@@ -10,6 +10,7 @@ test:
         parallel: true
   post:
     - echo $CIRCLE_NODE_INDEX
+        parallel: true
     - set |grep CIRCLE
     - touch $CIRCLE_ARTIFACTS/file.txt
 
