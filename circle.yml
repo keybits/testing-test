@@ -16,7 +16,7 @@ test:
 
 deployment:
   release:
-    tag: /.+?-rc\d+/
+    tag: /.*?/
     owner: keybits
     commands:
       - "true"
