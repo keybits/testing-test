@@ -20,4 +20,4 @@ deployment:
   production:
     branch: master
     commands:
-      - ls asdfsdfa
+      - "true"
