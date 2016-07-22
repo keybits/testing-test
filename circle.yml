@@ -17,8 +17,7 @@ test:
     - touch $CIRCLE_ARTIFACTS/file.txt
 
 deployment:
-  release:
-#    tag: /.*?/
-#    owner: keybits
+  production:
+    branch: master
     commands:
       - ls asdfsdfa
