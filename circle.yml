@@ -17,7 +17,7 @@ test:
     - touch $CIRCLE_ARTIFACTS/file.txt
 
 deployment:
-#  release:
+  release:
 #    tag: /.*?/
 #    owner: keybits
     commands:
