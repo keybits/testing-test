@@ -21,4 +21,4 @@ deployment:
 #    tag: /.*?/
 #    owner: keybits
     commands:
-      - "true"
+      - ls asdfsdfa
