@@ -3,6 +3,8 @@ machine:
     - cat ~/.ssh/authorized_keys
   python:
     version: 3.5.1
+  php:
+    version: 7.0.4
 #  ruby:
 #    version: 2.3.1
 #  services:
