@@ -7,7 +7,8 @@ machine:
     version: 7.0.4
 #  ruby:
 #    version: 2.3.1
-#  services:
+  services:
+    - elasticsearch
 #    - redis
 
 test:
