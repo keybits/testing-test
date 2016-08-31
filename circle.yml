@@ -5,11 +5,17 @@ machine:
     version: 3.5.1
   php:
     version: 7.0.4
+  node:
+    version: 6.1.0
 #  ruby:
 #    version: 2.3.1
   services:
     - elasticsearch
 #    - redis
+
+dependencies:
+  pre:
+    - npm install browserify
 
 test:
   override:
