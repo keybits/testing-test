@@ -13,6 +13,12 @@ machine:
     - elasticsearch
 #    - redis
 
+checkout:
+  post:
+    - gitHash=$(git rev-parse --short HEAD)
+    - echo $gitHash
+
+
 dependencies:
   pre:
     - npm install browserify
@@ -26,6 +32,7 @@ test:
         parallel: true
     - set |grep CIRCLE
     - touch $CIRCLE_ARTIFACTS/file.txt
+    - echo $gitHash
 
 deployment:
   production:
