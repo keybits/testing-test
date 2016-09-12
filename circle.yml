@@ -12,11 +12,8 @@ machine:
   services:
     - elasticsearch
 #    - redis
-
-checkout:
-  post:
-    - gitHash=$(git rev-parse --short HEAD)
-    - echo $gitHash
+  environment:
+    gitHash : $(git rev-parse --short HEAD)
 
 
 dependencies:
