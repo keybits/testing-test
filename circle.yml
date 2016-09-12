@@ -3,17 +3,15 @@ machine:
     - cat ~/.ssh/authorized_keys
   python:
     version: 3.5.1
-  php:
-    version: 7.0.4
-  node:
-    version: 6.1.0
+#  php:
+#    version: 7.0.4
+#  node:
+#    version: 6.1.0
 #  ruby:
 #    version: 2.3.1
-  services:
-    - elasticsearch
 #    - redis
   environment:
-    gitHash : $(git rev-parse --short HEAD)
+    SHORT_GIT_HASH: $(echo $CIRCLE_SHA1 | cut -c -7)
 
 
 dependencies:
@@ -29,7 +27,7 @@ test:
         parallel: true
     - set |grep CIRCLE
     - touch $CIRCLE_ARTIFACTS/file.txt
-    - echo $gitHash
+    - echo $SHORT_GIT_HASH
 
 deployment:
   production:
