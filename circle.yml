@@ -14,7 +14,7 @@ machine:
     SHORT_GIT_HASH: $(echo $CIRCLE_SHA1 | cut -c -7)
 
 
-dependencies:
+#dependencies:
   #pre:
   #  - npm install browserify
 
