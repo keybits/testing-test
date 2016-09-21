@@ -13,11 +13,6 @@ machine:
   environment:
     SHORT_GIT_HASH: $(echo $CIRCLE_SHA1 | cut -c -7)
 
-
-dependencies:
-  #pre:
-  #  - npm install browserify
-
 test:
   override:
     - case $CIRCLE_NODE_INDEX in 0) nosetests tests/test1.py ;; 1) nosetests tests/test2.py ;; esac:
