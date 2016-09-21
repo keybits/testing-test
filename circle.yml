@@ -15,8 +15,8 @@ machine:
 
 
 dependencies:
-  pre:
-    - npm install browserify
+  #pre:
+  #  - npm install browserify
 
 test:
   override:
