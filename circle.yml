@@ -31,6 +31,6 @@ test:
 
 deployment:
   production:
-    tag: /*/
+    tag: /.*/
     commands:
       - "true"
