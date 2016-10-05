@@ -3,8 +3,6 @@ machine:
     - cat ~/.ssh/authorized_keys
   python:
     version: 3.5.1
-  services:
-    - docker
 #  php:
 #    version: 7.0.4
 #  node:
