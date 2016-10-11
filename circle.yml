@@ -18,7 +18,7 @@ dependencies:
   pre:
     - cd /home/ubuntu && wget http://www.memcached.org/files/memcached-1.4.31.tar.gz && tar -zxvf memcached-1.4.31.tar.gz
     - sudo apt-get install libevent-dev
-    - cd home/ubuntu/memcached-1.4.31 && make && sudo make install
+    - cd /home/ubuntu/memcached-1.4.31 && ./configure && make && sudo make install
     - sudo rm /usr/bin/memcached && sudo  ln -s /usr/local/memcached/bin/memcached /usr/bin/memcached
     - sudo memcached -u root -d -m 1024 -p 11211 -l localhost
     - echo "stats" | nc localhost 11211
