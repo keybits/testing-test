@@ -9,7 +9,7 @@ machine:
 #    version: 6.1.0
 #  ruby:
 #    version: 2.3.1
-  serices:
+  services:
     - redis
 #  environment:
 #    SHORT_GIT_HASH: $(echo $CIRCLE_SHA1 | cut -c -7)
