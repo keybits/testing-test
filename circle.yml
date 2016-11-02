@@ -45,7 +45,7 @@ dependencies:
 test:
   override:
     - kitchen help
-    - bundle excec kitchen help
+    - bundle exec kitchen help
     - case $CIRCLE_NODE_INDEX in 0) nosetests tests/test1.py ;; 1) nosetests tests/test2.py ;; esac:
         parallel: true
   post:
