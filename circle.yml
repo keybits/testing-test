@@ -3,8 +3,8 @@ machine:
 #    - cat ~/.ssh/authorized_keys
   python:
     version: 3.5.2
-  ruby:
-    version: 2.1.6
+#  ruby:
+#    version: 2.1.6
 #  php:
 #    version: 7.0.4
 #  node:
@@ -49,7 +49,7 @@ dependencies:
 
 test:
   override:
-    - bundle exec kitchen help
+    # - bundle exec kitchen help
     - curl --retry 10 --retry-delay 5 -v http://localhost:9200
     - case $CIRCLE_NODE_INDEX in 0) nosetests tests/test1.py ;; 1) nosetests tests/test2.py ;; esac:
         parallel: true
