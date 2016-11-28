@@ -34,6 +34,7 @@ dependencies:
 
 dependencies:
   override:
+    - pip install -U appengine-sdk
     - docker info
     - docker run -d -p 9200:9200 elasticsearch:2.3; sleep 10
 
