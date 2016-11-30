@@ -36,7 +36,6 @@ dependencies:
 
 dependencies:
   override:
-    - pip install appengine-sdk
     - docker info
     - docker run -d -p 9200:9200 elasticsearch:2.3; sleep 10
     - echo $GIT_COMMIT_DESC
