@@ -16,6 +16,8 @@ machine:
     - docker
 #  environment:
 #    SHORT_GIT_HASH: $(echo $CIRCLE_SHA1 | cut -c -7)
+  environment:
+    GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
 
 dependencies:
   pre:
@@ -37,6 +39,7 @@ dependencies:
     - pip install appengine-sdk
     - docker info
     - docker run -d -p 9200:9200 elasticsearch:2.3; sleep 10
+    - echo $GIT_COMMIT_DESC
 
 
 #dependencies:
@@ -66,4 +69,5 @@ deployment:
   production:
     tag: /.*/
     commands:
+      - echo $GIT_COMMIT_DESC
       - "true"
