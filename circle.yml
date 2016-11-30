@@ -65,6 +65,6 @@ deployment:
   production:
     branch: master
     commands:
-      - echo "export GIT_COMMIT_MESSAGE=\"$(git log --format=oneline -n 1 $CIRCLE_SHA1)\"" >> ~/.bashrc
+      - echo "export GIT_COMMIT_DESC=\"$(git log --format=oneline -n 1 $CIRCLE_SHA1)\"" >> ~/.bashrc
       - echo $GIT_COMMIT_DESC
       - "true"
