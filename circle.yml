@@ -13,11 +13,9 @@ machine:
 #    version: 2.3.1
   services:
     - redis
-    - docker
+#    - docker
 #  environment:
 #    SHORT_GIT_HASH: $(echo $CIRCLE_SHA1 | cut -c -7)
-  environment:
-    GIT_COMMIT_DESC: $(git log --format=oneline -n 1 $CIRCLE_SHA1)
 
 dependencies:
   pre:
@@ -36,9 +34,8 @@ dependencies:
 
 dependencies:
   override:
-    - docker info
-    - docker run -d -p 9200:9200 elasticsearch:2.3; sleep 10
-    - echo $GIT_COMMIT_DESC
+  #  - docker info
+  #  - docker run -d -p 9200:9200 elasticsearch:2.3; sleep 10
 
 
 #dependencies:
@@ -68,5 +65,6 @@ deployment:
   production:
     tag: /.*/
     commands:
+      - echo "export GIT_COMMIT_MESSAGE=\"$(git log --format=oneline -n 1 $CIRCLE_SHA1)\"" >> ~/.bashrc
       - echo $GIT_COMMIT_DESC
       - "true"
