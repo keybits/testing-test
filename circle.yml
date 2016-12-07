@@ -17,13 +17,8 @@ machine:
 #  environment:
 #    SHORT_GIT_HASH: $(echo $CIRCLE_SHA1 | cut -c -7)
 
-dependencies:
-  pre:
-    - sudo add-apt-repository ppa:ondrej/php -y
-    - sudo apt-get update
-    - sudo apt-get install php7.1 php7.1-mysql
-    - sudo a2dismod php5
-    - sudo a2enmod php7.1
+#dependencies:
+#  pre:
   #  - sudo service redis-server stop
   #  - >
   #    cd ~ && if [ ! -d "redis-3.2.5" ]; then
@@ -39,6 +34,11 @@ dependencies:
 
 dependencies:
   override:
+    - sudo add-apt-repository ppa:ondrej/php -y
+    - sudo apt-get update
+    - sudo apt-get install php7.1 php7.1-mysql
+    - sudo a2dismod php5
+    - sudo a2enmod php7.1
   #  - docker info
   #  - docker run -d -p 9200:9200 elasticsearch:2.3; sleep 10
 
@@ -54,7 +54,7 @@ dependencies:
 
 test:
   override:
-    - echo php -i
+    - echo "php --version"
     # - bundle exec kitchen help
     # - curl --retry 10 --retry-delay 5 -v http://localhost:9200
     - case $CIRCLE_NODE_INDEX in 0) nosetests tests/test1.py ;; 1) nosetests tests/test2.py ;; esac:
