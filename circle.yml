@@ -11,7 +11,7 @@ machine:
 #    version: 6.1.0
 #  ruby:
 #    version: 2.3.1
-  services:
+#  services:
 #    - redis
 #    - docker
 #  environment:
@@ -32,13 +32,13 @@ machine:
   #cache_directories:
   #  - ~/redis-3.2.5
 
-dependencies:
-  override:
-    - sudo add-apt-repository ppa:ondrej/php -y
-    - sudo apt-get update
-    - sudo apt-get install php7.1 php7.1-mysql
-    - sudo a2dismod php5
-    - sudo a2enmod php7.1
+#   dependencies:
+#     override:
+#       - sudo add-apt-repository ppa:ondrej/php -y
+#       - sudo apt-get update
+#       - sudo apt-get install php7.1 php7.1-mysql
+#       - sudo a2dismod php5
+#       - sudo a2enmod php7.1
   #  - docker info
   #  - docker run -d -p 9200:9200 elasticsearch:2.3; sleep 10
 
