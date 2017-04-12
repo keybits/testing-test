@@ -1,6 +1,7 @@
 machine:
 #  pre:
 #    - cat ~/.ssh/authorized_keys
+  timezone: Europe/Dublin
   python:
     version: 3.5.2
 #  ruby:
