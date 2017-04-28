@@ -44,8 +44,9 @@ machine:
   #  - docker run -d -p 9200:9200 elasticsearch:2.3; sleep 10
 
 
-#dependencies:
-#  pre:
+dependencies:
+  pre:
+    - ./test.sh
 #    - cd /home/ubuntu && wget http://www.memcached.org/files/memcached-1.4.31.tar.gz && tar -zxvf memcached-1.4.31.tar.gz
 #    - sudo apt-get install libevent-dev
 #    - cd /home/ubuntu/memcached-1.4.31 && ./configure && make && sudo make install
