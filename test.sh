@@ -6,4 +6,4 @@ set -o xtrace
 
 ls -la
 echo "hello tom"
-sudo apt-get install htop
+# sudo apt-get install htop
