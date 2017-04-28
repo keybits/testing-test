@@ -58,7 +58,16 @@ test:
     - echo "php --version"
     # - bundle exec kitchen help
     # - curl --retry 10 --retry-delay 5 -v http://localhost:9200
-    - case $CIRCLE_NODE_INDEX in 0) nosetests tests/test1.py ;; 1) nosetests tests/test2.py ;; esac:
+    # - case $CIRCLE_NODE_INDEX in 0) nosetests tests/test1.py ;; 1) nosetests tests/test2.py ;; esac:
+    #     parallel: true
+    - >
+      if [[ $CIRCLE_BRANCH != "production-v2" ]]
+        then
+          case $CIRCLE_NODE_INDEX in
+          0) nosetests tests/test1.py ;;
+          1) nosetests tests/test2.py ;;
+        esac
+      fi:
         parallel: true
   post:
 #    - echo $CIRCLE_BUILD_IMAGE
