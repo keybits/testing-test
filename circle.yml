@@ -60,17 +60,16 @@ test:
     # - curl --retry 10 --retry-delay 5 -v http://localhost:9200
     # - case $CIRCLE_NODE_INDEX in 0) nosetests tests/test1.py ;; 1) nosetests tests/test2.py ;; esac:
     #     parallel: true
-    - bash -c "$CMD":
+    - ? |
+      if [[ $CIRCLE_BRANCH != "production-v2" ]] ;
+        then
+          case $CIRCLE_NODE_INDEX in
+          0) nosetests tests/test1.py ;;
+          1) nosetests tests/test2.py ;;
+        esac ;
+      fi
+      :
         parallel: true
-        environment:
-          CMD: >
-            if [[ $CIRCLE_BRANCH != "production-v2" ]] ;
-              then
-                case $CIRCLE_NODE_INDEX in
-                0) nosetests tests/test1.py ;;
-                1) nosetests tests/test2.py ;;
-              esac ;
-            fi
   post:
 #    - echo $CIRCLE_BUILD_IMAGE
     - echo $CIRCLE_NODE_INDEX:
