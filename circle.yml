@@ -47,6 +47,12 @@ machine:
 dependencies:
   pre:
     - bash test.sh
+    #new chromedriver
+    - wget https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip
+    - unzip chromedriver_linux64.zip
+    - sudo cp chromedriver /usr/local/bin/chromedriver
+    - which chromedriver
+    - chromedriver --version
 #    - cd /home/ubuntu && wget http://www.memcached.org/files/memcached-1.4.31.tar.gz && tar -zxvf memcached-1.4.31.tar.gz
 #    - sudo apt-get install libevent-dev
 #    - cd /home/ubuntu/memcached-1.4.31 && ./configure && make && sudo make install
